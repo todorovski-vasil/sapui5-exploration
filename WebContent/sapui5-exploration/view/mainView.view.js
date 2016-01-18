@@ -20,15 +20,18 @@ sap.ui.jsview("sapui5-exploration.view.mainView", {
 			}
 		})
 		
-		var inputField = new sap.m.Input({
+		var inputField = new sap.m.Input("input1", {
 			value : "{/recipient/name}",
 			description : "Hello {/recipient/name}",
 			valueLiveUpdate : true,
 			width : "60%",
+			liveChange : function() {
+				oController.onInputChanged()
+			}
 		})
 				
 		return new sap.m.Page({
-			title: "Naslov",
+			title: "{i18n>title}",
 			content: [
 			          buttonGoToPage2,
 			          inputField
