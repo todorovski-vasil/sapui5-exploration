@@ -3,21 +3,49 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
-
-		<script src="resources/sap-ui-core.js"
-				id="sap-ui-bootstrap"
-				data-sap-ui-libs="sap.m"
-				data-sap-ui-theme="sap_bluecrystal">
+		
+		<script id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex"
+			data-sap-ui-compatVersion="edge" 
+			>
 		</script>
 		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
-
+		
 		<script>
-				sap.ui.localResources("sapui5-exploration");
-				var app = new sap.m.App({initialPage:"idmainView1"});
-				var page = sap.ui.view({id:"idmainView1", viewName:"sapui5-exploration.mainView", type:sap.ui.core.mvc.ViewType.JS});
-				app.addPage(page);
-				app.placeAt("content");
-		</script>
+	
+//	    	sap.ui.getCore().attachInit(function () {
+//      	new sap.m.Text({
+//             text : "Hello World"
+//         }).placeAt("content");
+// 	});  
+	    	sap.ui.localResources("sapui5-exploration");
+         	// App
+         	var app = new sap.m.App({initialPage:"idmainView1"});
+         	
+         	// Views
+         	var mainPage = sap.ui.view({id:"idmainView1", viewName:"sapui5-exploration.view.mainView", type:sap.ui.core.mvc.ViewType.JS});
+         	var page2 = sap.ui.view({id:"idView2", viewName:"sapui5-exploration.view.view2", type:sap.ui.core.mvc.ViewType.JS});
+         	
+         	// Add pages to view
+         	app.addPage(mainPage).addPage(page2);
+         	
+         	// Show App
+         	app.placeAt("content");
+	       
+      	</script>
+
+<!-- 		<script> -->
+<!-- 			sap.ui.localResources("sapui5-exploration"); -->
+<!-- 			var app = new sap.m.App({initialPage:"idmainView1"}); -->
+			
+<!-- 			var mainPage = sap.ui.view({id:"idmainView1", viewName:"sapui5-exploration.mainView", type:sap.ui.core.mvc.ViewType.JS}); -->
+<!-- 			var page2 = sap.ui.view({id:"idView2", viewName:"sapui5-exploration.Views.view2", type:sap.ui.core.mvc.ViewType.JS}); -->
+			
+<!-- 			app.addPage(mainPage).addPage(page2); -->
+<!-- 			app.placeAt("content"); -->
+<!-- 		</script> -->
 
 	</head>
 	<body class="sapUiBody" role="application">
