@@ -15,20 +15,7 @@ sap.ui.define([
 * @memberOf sapui5-exploration.mainView
 */		
 //		onInit: function() {
-//			// set data model on view
-//	        var oData = {
-//	            recipient : {
-//	               name : "Vasil"
-//	            }
-//	        };
-//	        var oModel = new JSONModel(oData);
-//	        this.getView().setModel(oModel);
-//	         
-//	        // set i18n model on view
-//	        var i18nModel = new ResourceModel({
-//	            bundleName: "sapui5-exploration.i18n.i18n"
-//	        });
-//	        this.getView().setModel(i18nModel, "i18n");
+//			
 //		},
 
 /**
@@ -68,6 +55,7 @@ sap.ui.define([
 */	
 		onGoToPage2_pressed: function () {
 			// navigate to page2
+			var app = this.getView();
 			app.to("mvc.view.view2");
 		},
 		
