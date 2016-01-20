@@ -1,54 +1,47 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
-		
-		<script id="sap-ui-bootstrap"
-			src="resources/sap-ui-core.js"
-			data-sap-ui-libs="sap.m"
-			data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex"
-			data-sap-ui-compatVersion="edge" 
-			>
-		</script>
-		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
-		
-		<script>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<link rel="stylesheet" href="./sapui5-exploration/style/style.css">
+
+<script src="resources/sap-ui-core.js" id="sap-ui-bootstrap"
+	data-sap-ui-libs="sap.m, sap.ui.commons"
+	data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex"
+	data-sap-ui-compatVersion="edge"
+	data-sap-ui-resourceroots='{
+           "sapui5-exploration": "./",
+            	"mvc": "./sapui5-exploration/"
+         }'>
 	
-//	    	sap.ui.getCore().attachInit(function () {
-//      	new sap.m.Text({
-//             text : "Hello World"
-//         }).placeAt("content");
-// 	});  
-	    	sap.ui.localResources("sapui5-exploration");
-         	// App
-         	var app = new sap.m.App({initialPage:"idmainView1"});
-         	
-         	// Views
-         	var mainPage = sap.ui.view({id:"idmainView1", viewName:"sapui5-exploration.view.mainView", type:sap.ui.core.mvc.ViewType.JS});
-         	var page2 = sap.ui.view({id:"idView2", viewName:"sapui5-exploration.view.view2", type:sap.ui.core.mvc.ViewType.JS});
-         	
-         	// Add pages to view
-         	app.addPage(mainPage).addPage(page2);
-         	
-         	// Show App
-         	app.placeAt("content");
-	       
-      	</script>
+</script>
+<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
 
-<!-- 		<script> -->
-<!-- 			sap.ui.localResources("sapui5-exploration"); -->
-<!-- 			var app = new sap.m.App({initialPage:"idmainView1"}); -->
-			
-<!-- 			var mainPage = sap.ui.view({id:"idmainView1", viewName:"sapui5-exploration.mainView", type:sap.ui.core.mvc.ViewType.JS}); -->
-<!-- 			var page2 = sap.ui.view({id:"idView2", viewName:"sapui5-exploration.Views.view2", type:sap.ui.core.mvc.ViewType.JS}); -->
-			
-<!-- 			app.addPage(mainPage).addPage(page2); -->
-<!-- 			app.placeAt("content"); -->
-<!-- 		</script> -->
+<script>
+ new sap.ui.getCore().attachInit(function () {
+	new sap.m.Shell("theShell", {
+		app : new sap.ui.core.ComponentContainer({
+			name : "sapui5-exploration",
+			height: '100%'
+		})
+	}).placeAt("content");
+ });
+	
+	
+	// 	var app = new sap.m.App({
+	// 		initialPage : "idMain1"
+	// 	});
+	// 	var page = sap.ui.view({
+	// 		id : "idMain1",
+	// 		viewName : "projectmikron.Main",
+	// 		type : sap.ui.core.mvc.ViewType.JS
+	// 	});
+	// 	app.addPage(page);
+	// 	app.placeAt("content");
+</script>
 
-	</head>
-	<body class="sapUiBody" role="application">
-		<div id="content"></div>
-	</body>
+</head>
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+</body>
 </html>

@@ -1,0 +1,13 @@
+/* .idPage{ */
+/* 	font-color: red; */
+/* 	overflow-x: visible; */
+/* } */
+
+.sapUiTheme-sap_bluecrystal {
+      font-size: 16px;
+      height: 100%;
+    }
+    
+    div#content {
+      height: 100%;
+    }

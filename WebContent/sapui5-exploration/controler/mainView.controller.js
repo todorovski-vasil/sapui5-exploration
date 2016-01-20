@@ -7,29 +7,29 @@ sap.ui.define([
 	
 	var core = sap.ui.getCore();
 	
-	return Controller.extend("sapui5-exploration.controler.mainView", {
+	return Controller.extend("mvc.controler.mainView", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf sapui5-exploration.mainView
 */		
-		onInit: function() {
-			// set data model on view
-	        var oData = {
-	            recipient : {
-	               name : "Vasil"
-	            }
-	        };
-	        var oModel = new JSONModel(oData);
-	        this.getView().setModel(oModel);
-	         
-	        // set i18n model on view
-	        var i18nModel = new ResourceModel({
-	            bundleName: "sapui5-exploration.i18n.i18n"
-	        });
-	        this.getView().setModel(i18nModel, "i18n");
-		},
+//		onInit: function() {
+//			// set data model on view
+//	        var oData = {
+//	            recipient : {
+//	               name : "Vasil"
+//	            }
+//	        };
+//	        var oModel = new JSONModel(oData);
+//	        this.getView().setModel(oModel);
+//	         
+//	        // set i18n model on view
+//	        var i18nModel = new ResourceModel({
+//	            bundleName: "sapui5-exploration.i18n.i18n"
+//	        });
+//	        this.getView().setModel(i18nModel, "i18n");
+//		},
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
@@ -68,7 +68,7 @@ sap.ui.define([
 */	
 		onGoToPage2_pressed: function () {
 			// navigate to page2
-			app.to("idView2");
+			app.to("mvc.view.view2");
 		},
 		
 		/**
@@ -78,9 +78,9 @@ sap.ui.define([
 		onInputChanged: function() {
 			// read msg from i18n model
 	         var oBundle = this.getView().getModel("i18n").getResourceBundle();
-//	         var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+	         var sRecipient = this.getView().getModel().getProperty("/recipient/name");
 //	         var sRecipient = sap.ui.getCore().byId('input1').getValue();
-	         var sRecipient = core.byId('input1').getValue();
+//	         var sRecipient = core.byId('input1').getValue();
 	         var sMsg = oBundle.getText("helloMsg", [sRecipient, "today"]);
 	         // show message
 	         MessageToast.show(sMsg, {
