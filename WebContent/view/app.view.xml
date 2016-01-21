@@ -1,0 +1,22 @@
+<mvc:View
+	controllerName="controller.mainController"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	displayBlock="true" >
+	<App class="sapUiDemoWT" id="app">
+		<pages>
+			<Page title="{i18n>homePageTitle}">
+				<content>
+					<Button
+						text="{i18n>showHelloButtonText}"
+						press="onShowHello"
+						class="myAppDemoWT myCustomButton"/>
+					<mvc:XMLView viewName="view.helloPanel"/>
+					<mvc:JSView viewName="view.mainView"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -4,28 +4,73 @@
 		"_version": "1.1.0",
 		"id": "app",
 		"type": "application",
-		"title": "SAPUI5 Walkthrough",
-		"description": "A simple walkthrough app that explains the most important concepts of SAPUI5",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
 		"applicationVersion": {
-		  "version": "1.0.0"
+			"version": "1.0.0"
+		},
+		"ach": "CA-UI5-DOC"
 	},
-	"ach": "CA-UI5-DOC"
-  },
-  "sap.ui": {
-	"_version": "1.1.0",
-	"technology": "UI5"
-  },
-  "sap.ui5": {
-	"_version": "1.1.0",
-	"rootView": {
-		"viewName": "mvc.view.mainView",
-		"type": "JS"
-	},
-	"dependencies": {
-	  "minUI5Version": "1.30",
-	  "libs": {
-		"sap.m": {}
-	  }
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+  	},
+  	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView":{
+			"viewName": "view.app",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+				"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sapui5-exploration.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+		  "config": {
+			"routerClass": "sap.m.routing.Router",
+			"viewType": "XML",
+			"viewPath": "view",
+			"controlId": "app",
+			"controlAggregation": "pages"
+		  },
+		  "routes": [
+			{
+			  "pattern": "",
+			  "name": "overview",
+			  "target": "overview"
+			},
+			{
+			  "pattern": "detail",
+			  "name": "detail",
+			  "target": "detail"
+			}
+		  ],
+		  "targets": {
+			"overview": {
+			  "viewName": "helloPanel"
+			},
+			"detail": {
+			  "viewName": "app"
+			}
+		  }
+		}
 	}
-  }
 }

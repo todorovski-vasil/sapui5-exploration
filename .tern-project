@@ -1,0 +1,10 @@
+{
+  "ecmaVersion": 5,
+  "libs": [
+    "browser",
+    "jquery"
+  ],
+  "loadEagerly": [
+    "https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
+  ]
+}
