@@ -59,6 +59,7 @@ sap.ui.define([
 			// app.to("view.view2");
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail");
+//			oRouter.
 		},
 
 		/**

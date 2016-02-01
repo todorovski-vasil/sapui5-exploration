@@ -16,6 +16,7 @@
 				<content>
 					<mvc:XMLView viewName="view.helloPanel"/>
 <!-- 					<mvc:JSView viewName="view.mainView"/> -->
+					<mvc:XMLView viewName="view.invoiceList"/>
 				</content>
 			</Page>
 		</pages>

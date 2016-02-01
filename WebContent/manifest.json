@@ -2,7 +2,7 @@
 	"_version": "1.1.0",
 	"sap.app": {
 		"_version": "1.1.0",
-		"id": "app",
+		"id": "sapui5-exploration",
 		"type": "application",
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
@@ -34,6 +34,9 @@
 			"libs": {
 				"sap.m": {}
 			}
+		},
+		"config": {
+	  		"invoiceLocal": "/invoices.json"
 		},
 		"models": {
 				"i18n": {
