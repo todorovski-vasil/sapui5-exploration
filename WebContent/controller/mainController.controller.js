@@ -77,6 +77,22 @@ sap.ui.define([
 				duration: 2000,
 				animationDuration: 500
 	        });
+		},
+		_getDialog : function () {
+			// create dialog lazily
+			if (!this._oDialog) {
+	            // create dialog via fragment factory
+				this._oDialog = sap.ui.xmlfragment("view.helloDialog", this);
+				// connect dialog to view (models, lifecycle)
+				this.getView().addDependent(this._oDialog);
+			}
+			return this._oDialog;
+		},
+		onOpenDialog : function () {
+			this._getDialog().open();
+		},
+		onCloseDialog : function () {
+			this._getDialog().close();
 		}
 	});
 });
