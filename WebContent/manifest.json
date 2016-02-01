@@ -44,33 +44,33 @@
 			}
 		},
 		"routing": {
-		  "config": {
-			"routerClass": "sap.m.routing.Router",
-			"viewType": "XML",
-			"viewPath": "view",
-			"controlId": "app",
-			"controlAggregation": "pages"
-		  },
-		  "routes": [
-			{
-			  "pattern": "",
-			  "name": "overview",
-			  "target": "overview"
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "view",
+				"controlId": "app",
+				"controlAggregation": "pages"
 			},
-			{
-			  "pattern": "detail",
-			  "name": "detail",
-			  "target": "detail"
-			}
-		  ],
-		  "targets": {
-			"overview": {
-			  "viewName": "helloPanel"
-			},
-			"detail": {
-			  "viewName": "app"
-			}
-		  }
+			"routes": [
+				{
+					"pattern": "",
+					"name": "overview",
+					"target": "overview"
+				},
+				{
+					"pattern": "detail",
+					"name": "detail",
+					"target": "detail"
+				}
+			],
+		 	"targets": {
+				"overview": {
+			  		"viewName": "app"
+				},
+				"detail": {
+			 		"viewName": "helloPanel"
+				}
+		  	}
 		}
 	}
 }

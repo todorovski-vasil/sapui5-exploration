@@ -1,8 +1,9 @@
 sap.ui.define([
    "sap/ui/core/UIComponent",
    "sap/ui/model/json/JSONModel",
+   "controller/helloDialog",
    "sap/ui/model/resource/ResourceModel"
-], function (UIComponent, JSONModel, ResourceModel) {
+], function (UIComponent, JSONModel, helloDialog, ResourceModel) {
 	"use strict";
 
 	return UIComponent.extend("sapui5-exploration.Component", {
@@ -23,6 +24,9 @@ sap.ui.define([
 			};
 			var oModel = new JSONModel(oData);
 			this.setModel(oModel);
+			
+			// set dialog
+			this.helloDialog = new helloDialog();
 
 			// // set i18n model
 			// var i18nModel = new ResourceModel({

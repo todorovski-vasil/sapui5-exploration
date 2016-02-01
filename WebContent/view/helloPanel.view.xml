@@ -8,10 +8,6 @@
 		width="auto" >
 		<content>
 			<Button
-		        text="{i18n>openDialogButtonText}"
-		        press="onOpenDialog"
-		        class="sapUiSmallMarginEnd"/>
-			<Button
 				text="{i18n>showHelloButtonText}"
 				press="onGoToPage2_pressed"
 				class="myAppDemoWT myCustomButton"/>
