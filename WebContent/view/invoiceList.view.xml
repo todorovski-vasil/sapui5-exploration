@@ -4,10 +4,30 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<List
-    	headerText="{i18n>invoiceListTitle}"
-     	class="sapUiResponsiveMargin"
+		id="invoiceList"
+    	class="sapUiResponsiveMargin"
       	width="auto"
-      	items="{invoice>/Invoices}" >
+      	items="{
+      		path: 'invoice>/Invoices',
+      		sorter: [{
+      			path: 'ShipperName',
+      			group: true
+      		},
+      		{
+      			path: 'ProductName'
+      		}]
+      	}" >
+      	<headerToolbar>
+         	<Toolbar>
+            	<Title text="{i18n>invoiceListTitle}"/>
+            	<ToolbarSpacer/>
+<!--             	<SearchField width="40%" search="onFilterInvoices"/> -->
+            	<SearchField 
+            		width="40%" 
+            		liveChange="onFilterInvoices" 
+            		selectOnFocus="false" />
+        	</Toolbar>
+      	</headerToolbar>
       	<items>
          	<ObjectListItem
             	title="{invoice>Quantity} x {invoice>ProductName}"
@@ -17,16 +37,16 @@
 					formatOptions: {
 						showMeasure: false
 					}					
-					}"
-					numberUnit="{view>/currency}"
-					numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
-					<firstStatus>
-						<ObjectStatus text="{
-								path: 'invoice>Status',
-		 						formatter: '.formatter.statusText'
-		 					}"/>
-					</firstStatus>
-			</ObjectListItem>
+				}"
+				numberUnit="{view>/currency}"
+				numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+				<firstStatus>
+					<ObjectStatus text="{
+							path: 'invoice>Status',
+	 						formatter: '.formatter.statusText'
+	 					}"/>
+				</firstStatus>
+			</ObjectListItem>			
       	</items>
    	</List>
 </mvc:View>
