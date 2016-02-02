@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View
+	controllerName="controller.invoiceList"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<List
+		id="invoiceListRemote"
+    	class="sapUiResponsiveMargin"
+      	width="auto"
+      	items="{
+      		path: 'invoiceRemote>/Invoices',
+      		sorter: [{
+      			path: 'ShipperName',
+      			group: true
+      		},
+      		{
+      			path: 'ProductName'
+      		}]
+      	}" >
+      	<headerToolbar>
+         	<Toolbar>
+            	<Title text="{i18n>invoiceListTitle}"/>
+            	<ToolbarSpacer/>
+<!--             	<SearchField width="40%" search="onFilterInvoicesRemote"/> -->
+            	<SearchField 
+            		width="40%" 
+            		liveChange="onFilterInvoicesRemote" 
+            		selectOnFocus="false" />
+        	</Toolbar>
+      	</headerToolbar>
+      	<items>
+         	<ObjectListItem
+            	title="{invoiceRemote>Quantity} x {invoiceRemote>ProductName}"
+            	number="{
+					parts: [{path: 'invoiceRemote>ExtendedPrice'}, {path: 'view>/currency'}],
+					type: 'sap.ui.model.type.Currency',
+					formatOptions: {
+						showMeasure: false
+					}					
+				}"
+				numberUnit="{view>/currency}"
+				numberState="{= ${invoiceRemote>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+				<firstStatus>
+					<ObjectStatus text="{
+							path: 'invoiceRemote>Status',
+	 						formatter: '.formatter.statusText'
+	 					}"/>
+				</firstStatus>
+			</ObjectListItem>			
+      	</items>
+   	</List>
+</mvc:View>

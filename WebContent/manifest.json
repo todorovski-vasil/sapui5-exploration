@@ -36,7 +36,8 @@
 			}
 		},
 		"config": {
-	  		"invoiceLocal": "/invoices.json"
+	  		"invoiceLocal": "/invoices.json",
+	  		"invoiceRemote": "http://services.odata.org/V3/Northwind/Northwind.svc/"
 		},
 		"models": {
 				"i18n": {
@@ -71,7 +72,7 @@
 			  		"viewName": "app"
 				},
 				"detail": {
-			 		"viewName": "helloPanel"
+			 		"viewName": "invoiceListRemote"
 				}
 		  	}
 		}
